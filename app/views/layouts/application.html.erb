@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CbclInfo</title>
+  <title>单车运动俱乐部联盟 - CBCL.info</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+   您好， <%= current_user.email %> | <%= link_to "注销", destroy_user_session_path, method: :delete %>
+<% else %>
+   <%= link_to "登陆", new_user_session_path %> | <%= link_to "注册",  new_user_registration_path %>
+<% end %>
 
 <%= yield %>
 
