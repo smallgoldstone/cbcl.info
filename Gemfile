@@ -41,10 +41,11 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+gem 'kaminari'
 gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'client_side_validations'
 gem 'whenever', :require => false
 gem 'formtastic'
 gem "paperclip", "~> 3.0"
-gem 'kaminari'
+
 
