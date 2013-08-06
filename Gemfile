@@ -49,5 +49,5 @@ gem 'client_side_validations'
 gem 'whenever', :require => false
 gem 'formtastic'
 gem "paperclip", "~> 3.0"
-
+gem "therubyracer", :require => 'v8'
 
