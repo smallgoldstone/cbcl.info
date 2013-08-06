@@ -1,4 +1,4 @@
-1375716382
+1375787949
 Ability	/home/huangxl/dev/cbcl.info/app/models/ability.rb	class Ability
 AddNameToUsers	/home/huangxl/dev/cbcl.info/db/migrate/20130804130538_add_name_to_users.rb	class AddNameToUsers 
 AddNicknameToUsers	/home/huangxl/dev/cbcl.info/db/migrate/20130804130429_add_nickname_to_users.rb	class AddNicknameToUsers 
