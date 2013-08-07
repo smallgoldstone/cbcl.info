@@ -1,18 +1,18 @@
 <h2>新骑友</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.inputs do %>
+    <%= f.input :email %>
+    <%= f.input :nickname %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "加入" %></div>
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :button %>
+  <% end %>
 <% end %>
 
 <%= render "devise/shared/links" %>

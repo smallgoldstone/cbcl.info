@@ -26,12 +26,16 @@
               <li><a href="#about">关于</a></li>
               <li><a href="#contact">联系</a></li>
             </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="密码">
-              <button type="submit" class="btn">登录</button>
-            </form>
-            
+              <% if user_signed_in? %>
+                  <p class="pull-right">您好， <%= current_user.nickname %> | <%= link_to "注销", destroy_user_session_path, method: :delete %></p>
+              <% else %>
+                <form action="<%= session_path("user")%>" method="post" class="navbar-form pull-right">
+                  <input class="span2" type="email" name="user[email]" placeholder="Email">
+                  <input class="span2" type="password" name="user[password]" placeholder="密码">
+                  <input name="user[remember_me]" type="hidden" value="1" /> 
+                  <button type="submit" class="btn">登录</button>
+                </form>
+              <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
