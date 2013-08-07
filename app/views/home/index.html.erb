@@ -10,6 +10,7 @@
     </p>
   </div>
   <div class="span5">
+  <% if ! user_signed_in? %>
     <form class="form-horizontal" name="new_user_form" action="<%= registration_path("user")%>" method="post">
       <div class="control-group">
         <label class="control-label" for="inputEmail">电子邮件</label>
@@ -44,6 +45,7 @@
       </div>
 
     </form>
+  <% end %>
   </div>
 </div>
 <hr />
