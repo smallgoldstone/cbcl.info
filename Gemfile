@@ -14,7 +14,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.10'
+  gem 'sass-rails',   '~>3.2.3'
   gem 'coffee-rails', '3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -47,11 +47,11 @@ gem 'devise', '3.0.0'
 gem 'cancan', '1.6.10'
 gem 'rolify', '3.2.0'
 gem 'kaminari', '0.14.1'
-gem 'by_star', '2.1.0.beta2 453f100', :git => "git://github.com/radar/by_star"
+gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'client_side_validations', '3.2.5'
 gem 'whenever', '0.8.4',  :require => false
 gem 'formtastic', '2.2.1'
 gem 'formtastic-bootstrap', '2.1.3'
-gem "paperclip", '3.5.1'
-gem "therubyracer", '0.11.4', :require => 'v8'
+gem 'paperclip', '3.5.1'
+gem 'therubyracer', '0.11.4', :require => 'v8'
 
