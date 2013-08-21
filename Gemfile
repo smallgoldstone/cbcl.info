@@ -51,7 +51,7 @@ gem 'by_star', '2.1.0.beta2 453f100', :git => "git://github.com/radar/by_star"
 gem 'client_side_validations', '3.2.5'
 gem 'whenever', '0.8.4',  :require => false
 gem 'formtastic', '2.2.1'
-gem 'formtastic-bootstrap'. '2.1.3'
+gem 'formtastic-bootstrap', '2.1.3'
 gem "paperclip", '3.5.1'
 gem "therubyracer", '0.11.4', :require => 'v8'
 
