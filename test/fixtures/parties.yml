@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date_at: 2013-08-21 16:14:46
+  desc: MyText
+  club: 
+
+two:
+  name: MyString
+  date_at: 2013-08-21 16:14:46
+  desc: MyText
+  club: 

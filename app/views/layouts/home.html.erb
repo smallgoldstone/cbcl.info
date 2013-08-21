@@ -20,11 +20,11 @@
           <a class="brand" href="#">CBCL.info</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">首页</a></li>
-              <li><a href="#club">俱乐部</a></li>
-              <li><a href="#club">活动</a></li>
-              <li><a href="#about">关于</a></li>
-              <li><a href="#contact">联系</a></li>
+              <li><%= link_to "首页", root_path %></li>
+              <li><%= link_to "俱乐部", club_path %></li>
+              <li><%= link_to "活动", party_path %></li>
+              <li><%= link_to "关于", about_path %></li>
+              <li class="active"><%= link_to "联系", contact_path %></li>
             </ul>
               <% if user_signed_in? %>
                   <p class="pull-right">您好， <%= current_user.nickname %> | <%= link_to "注销", destroy_user_session_path, method: :delete %></p>

@@ -11,7 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804130538) do
+ActiveRecord::Schema.define(:version => 20130821082442) do
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "creator_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "join_clubs_count", :default => 0
+    t.integer  "parties_count",    :default => 0
+  end
+
+  add_index "clubs", ["creator_id"], :name => "index_clubs_on_creator_id"
+
+  create_table "join_clubs", :force => true do |t|
+    t.integer  "club_id"
+    t.integer  "member_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "join_clubs", ["club_id"], :name => "index_join_clubs_on_club_id"
+  add_index "join_clubs", ["member_id"], :name => "index_join_clubs_on_member_id"
+
+  create_table "parties", :force => true do |t|
+    t.string   "name"
+    t.datetime "date_at"
+    t.text     "desc"
+    t.integer  "club_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "parties", ["club_id"], :name => "index_parties_on_club_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -39,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130804130538) do
     t.datetime "updated_at",                             :null => false
     t.string   "nickname"
     t.string   "name"
+    t.integer  "join_clubs_count",       :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

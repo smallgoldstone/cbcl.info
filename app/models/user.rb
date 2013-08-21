@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   # attr_accessible :title, :body
   attr_accessible :email, :password, :password_confirmation, :nickname
+
+  has_many :join_clubs, :foreign_key => "member_id"
+  has_many :clubs, :through => :join_clubs
 end

@@ -1,0 +1,8 @@
+<div class="row">
+<h2>组织活动列表</h2>
+  <ul>
+  <% @parties.each do |party|%>
+    <li><%= party.club.name %>俱乐部在<%= party.date_at %>组织 <%= party.name %>活动</li>
+  <% end %>
+  </ul>
+</div>

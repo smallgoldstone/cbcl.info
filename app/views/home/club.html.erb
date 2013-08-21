@@ -1,0 +1,8 @@
+<div class="row">
+<h2>加盟俱乐部列表</h2>
+  <ul>
+  <% @clubs.each do |club|%>
+    <li><%= club.name %>（ <%= club.join_clubs.size %>位会员）&nbsp; 组织 <%= club.parties.size %>次活动</li>
+  <% end %>
+  </ul>
+</div>

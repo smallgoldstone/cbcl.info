@@ -52,19 +52,28 @@
       <div class="row">
         <div class="span4">
           <h3>最受欢迎俱乐部</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <ul>
+            <% @pop_clubs.each do |club|%>
+              <li> <%= club.name %>(<%= club.join_clubs.size%>位会员)&nbsp;<%= link_to "加入该俱乐部" %></li>
+            <% end %>
+          </ul>
         </div>
         
         <div class="span4">
           <h3>最活跃俱乐部</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <ul>
+            <% @act_clubs.each do |club|%>
+              <li> <%= club.name %>(组织<%= club.parties.size%>次活动)&nbsp;<%= link_to "加入该俱乐部" %></li>
+            <% end %>
+          </ul>
         </div>
        
         <div class="span4">
           <h3>最新活动</h3>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <ul>
+            <% @last_parties.each do |party|%>
+              <li> 在<%= party.date_at %>，<%= party.club.name %>俱乐部组织“<%= party.name %>”活动&nbsp;<%= link_to "报名" %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
