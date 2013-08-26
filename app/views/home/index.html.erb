@@ -12,8 +12,13 @@ class="active"
       </strong>
     </p>
   </div>
+  
+  <% if user_signed_in? %>
+  <div class="span3 offset2">
+    <%= link_to "创建俱乐部", new_club_path, :class => "btn btn-large btn-success" %>
+  </div>
+  <% else %>
   <div class="span5">
-  <% if ! user_signed_in? %>
     <form class="form-horizontal" name="new_user_form" action="<%= registration_path("user")%>" method="post">
       <div class="control-group">
         <label class="control-label" for="inputEmail">电子邮件</label>
@@ -48,8 +53,9 @@ class="active"
       </div>
 
     </form>
-  <% end %>
   </div>
+  <% end %>
+  
 </div>
 <hr />
       <div class="row">
@@ -57,7 +63,7 @@ class="active"
           <h3>最受欢迎俱乐部</h3>
           <ul>
             <% @pop_clubs.each do |club|%>
-              <li> <%= club.name %>(<%= club.join_clubs.size%>位会员)&nbsp;<%= link_to "加入该俱乐部" %></li>
+              <li> <%= club.name %>(<%= club.join_clubs.size%>位会员)&nbsp;<%= link_to "申请加入" %></li>
             <% end %>
           </ul>
         </div>
@@ -66,7 +72,7 @@ class="active"
           <h3>最活跃俱乐部</h3>
           <ul>
             <% @act_clubs.each do |club|%>
-              <li> <%= club.name %>(组织<%= club.parties.size%>次活动)&nbsp;<%= link_to "加入该俱乐部" %></li>
+              <li> <%= club.name %>(组织<%= club.parties.size%>次活动)&nbsp;<%= link_to "申请加入" %></li>
             <% end %>
           </ul>
         </div>

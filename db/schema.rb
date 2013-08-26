@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821082442) do
+ActiveRecord::Schema.define(:version => 20130822025708) do
 
   create_table "clubs", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130821082442) do
     t.datetime "updated_at",                      :null => false
     t.integer  "join_clubs_count", :default => 0
     t.integer  "parties_count",    :default => 0
+    t.string   "url"
   end
 
   add_index "clubs", ["creator_id"], :name => "index_clubs_on_creator_id"

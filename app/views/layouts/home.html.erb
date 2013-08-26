@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>单车运动俱乐部联盟 - CBCL.info</title>
+<meta name="keywords" content="单车 自行车 车队 骑行" />
+<meta name="description" content="CBCL.info是一家免费为自行车运动俱乐部提供网络服务的供应商。在我们的平台上，会为每个加盟的俱乐部提供免费的主页，组织活动功能，以及俱乐部成员之间的消息广播功能。 " />
+<meta name="author" content="CBCL.info" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
   <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
@@ -21,10 +24,10 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <%= yield :index %>><%= link_to "首页", root_path %></li>
-              <li <%= yield :club %>><%= link_to "俱乐部", club_path %></li>
-              <li <%= yield :party %>><%= link_to "活动", party_path %></li>
-              <li <%= yield :about %>><%= link_to "关于", about_path %></li>
-              <li <%= yield :contact %>><%= link_to "联系", contact_path %></li>
+              <li <%= yield :club %>><%= link_to "俱乐部", home_club_path %></li>
+              <li <%= yield :party %>><%= link_to "活动", home_party_path %></li>
+              <li <%= yield :about %>><%= link_to "关于", home_about_path %></li>
+              <li <%= yield :contact %>><%= link_to "联系", home_contact_path %></li>
             </ul>
               <% if user_signed_in? %>
                   <p class="pull-right">您好， <%= current_user.nickname %> | <%= link_to "注销", destroy_user_session_path, method: :delete %></p>

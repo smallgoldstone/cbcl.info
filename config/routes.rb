@@ -1,7 +1,6 @@
 CbclInfo::Application.routes.draw do
   devise_for :users
 
-  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,8 +59,13 @@ CbclInfo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   root :to => "home#index"
-  match "/club" => "home#club"
-  match "/party" => "home#party"
-  match "/about" => "home#about"
-  match "/contact" => "home#contact"
+  match "/home/club" => "home#club"
+  match "/home/party" => "home#party"
+  match "/home/about" => "home#about"
+  match "/home/contact" => "home#contact"
+  resources :clubs do
+    resources :members
+    resources :parties
+  end
+  resources :parties
 end

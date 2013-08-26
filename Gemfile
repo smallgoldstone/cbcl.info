@@ -46,12 +46,13 @@ gem 'bootstrap-sass', '2.3.2.1'
 gem 'devise', '3.0.0'
 gem 'cancan', '1.6.10'
 gem 'rolify', '3.2.0'
-gem 'kaminari', '0.14.1'
-gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'simple_form'
 gem 'client_side_validations', '3.2.5'
+gem 'client_side_validations-simple_form'
+gem 'kaminari', '0.14.1'
 gem 'whenever', '0.8.4',  :require => false
 gem 'formtastic', '2.2.1'
-gem 'formtastic-bootstrap', '2.1.3'
+gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'paperclip', '3.5.1'
 gem 'therubyracer', '0.11.4', :require => 'v8'
 
